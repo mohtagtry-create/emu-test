@@ -1,4 +1,3 @@
-sleep 15
-adb shell pidof com.anime.witcher.as7 || adb shell pidof com.anime.witcher || echo "not running"
-snap a
-ui a
+adb shell getprop ro.product.cpu.abi
+adb shell getprop ro.product.cpu.abilist
+adb shell cat /system/build.prop | grep -i abi
