@@ -1,1 +1,1 @@
-ACT=$(adb shell cmd package resolve-activity --brief com.riftapps.animerift 2>/dev/null | tail -1); echo "ACTIVITY=$ACT"; adb shell am start -n "$ACT"; sleep 30; snap a; ui a
+ACT=com.riftapps.animerift/.MainActivity; adb shell am start -n $ACT; sleep 35; echo "=== TOP ==="; adb shell dumpsys activity activities 2>/dev/null | grep -iE "topResumedActivity|mResumedActivity" | head -3; echo "=== LOGCAT APP ==="; adb logcat -d 2>/dev/null | grep -iE "riftapps|AndroidRuntime|FATAL|flutter|UnsatisfiedLink" | tail -40; snap a; ui a
