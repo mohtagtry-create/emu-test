@@ -1,1 +1,1 @@
-P=$(adb shell pm list packages 2>/dev/null | grep -iE "anime|rift" | sed 's/package://' | head -1); echo "PACKAGE=$P"; if [ -n "$P" ]; then adb shell monkey -p "$P" 1; sleep 25; snap a; ui a; else echo "NOT INSTALLED"; fi
+ACT=$(adb shell cmd package resolve-activity --brief com.riftapps.animerift 2>/dev/null | tail -1); echo "ACTIVITY=$ACT"; adb shell am start -n "$ACT"; sleep 30; snap a; ui a
