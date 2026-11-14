@@ -1,1 +1,1 @@
-echo "=== packages ==="; adb shell pm list packages 2>/dev/null | grep -iE "anime|rift"; P=$(adb shell pm list packages 2>/dev/null | grep -iE "anime|rift" | sed 's/package://' | head -1); echo "PACKAGE=$P"; adb shell monkey -p "$P" 1; sleep 25; snap a; ui a
+P=$(adb shell pm list packages 2>/dev/null | grep -iE "anime|rift" | sed 's/package://' | head -1); echo "PACKAGE=$P"; if [ -n "$P" ]; then adb shell monkey -p "$P" 1; sleep 25; snap a; ui a; else echo "NOT INSTALLED"; fi
