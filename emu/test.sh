@@ -1,1 +1,1 @@
-adb shell am start -n com.anime.witcher.as7/com.anime.witcher.activites.HomeActivity; sleep 12; snap home1; ui home1; adb shell input keyevent 20; sleep 2; snap home2; ui home2
+adb shell pm list packages 2>/dev/null | grep -iE "anime|rift" ; echo "---install-check---"; adb shell pm path 2>/dev/null; echo "---start---"; adb shell monkey -p $(adb shell pm list packages 2>/dev/null | grep -iE "anime|rift" | sed 's/package://') 1; sleep 20; snap a; ui a
