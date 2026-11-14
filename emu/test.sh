@@ -1,1 +1,1 @@
-ACT=com.riftapps.animerift/.MainActivity; adb shell am start -W -n $ACT 2>&1 | head -8; sleep 20; echo "=== FATAL ==="; adb logcat -d 2>/dev/null | grep -A25 "FATAL EXCEPTION" | tail -60; echo "=== DIED/CRASH ==="; adb logcat -d 2>/dev/null | grep -iE "riftapps.*(died|crash|abort|Killed)|Process com.riftapps" | tail -15
+ACT=com.riftapps.animerift/.MainActivity; adb shell am start -n $ACT; sleep 18; echo "=== FATAL HEAD ==="; adb logcat -d 2>/dev/null | grep -A6 "FATAL EXCEPTION" | head -25; echo "=== CAUSED BY ==="; adb logcat -d 2>/dev/null | grep -E "Caused by:" | tail -8
