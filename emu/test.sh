@@ -1,1 +1,1 @@
-adb shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; sleep 25; snap anime_rift_open; ui anime_rift_open; adb shell pidof "$PKG"; adb shell dumpsys activity activities | grep -E 'mResumedActivity|topResumedActivity'; adb logcat -d -t 500 | grep -E 'FATAL EXCEPTION|UnsatisfiedLinkError|MainDispatcher|animerift|flutter'
+adb shell monkey -p com.riftapps.animerift 1; sleep 12; snap a; ui a; adb shell "ps -A | grep -i rift"; echo "---LOGCAT---"; adb logcat -d | grep -iE "FATAL|AndroidRuntime|NoClassDefFound|animerift|MainDispatcher" | tail -40
