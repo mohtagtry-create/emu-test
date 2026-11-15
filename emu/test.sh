@@ -1,1 +1,1 @@
-adb shell input tap 160 372; sleep 8; snap a; ui a; echo "---PROC---"; adb shell "ps -A | grep -i rift"; echo "---FATAL CHECK---"; adb logcat -d | grep -iE "FATAL EXCEPTION|NoClassDefFound|Process: com.riftapps.animerift" | tail -20
+adb shell input tap 160 372; sleep 6; snap a; ui a; echo "---AFTER ALLOW---"; adb shell "ps -A | grep -i rift"; echo "---TAP IN APP area---"; adb shell input tap 160 300; sleep 6; snap b; ui b; echo "---FATAL---"; adb logcat -d | grep -iE "FATAL EXCEPTION|NoClassDefFound|Process: com.riftapps.animerift" | tail -15
