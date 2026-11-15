@@ -1,6 +1,1 @@
-adb logcat -c
-adb shell am start -W -n com.my_anime.app/anime.rifts.MainActivity
-sleep 20
-adb logcat -d -v brief ActivityTaskManager AndroidRuntime MediaKit Coroutine Flutter '*:F' | tail -n 250
-snap repaired-launch
-ui repaired-ui
+adb shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; sleep 20; snap anime_rift_open; ui anime_rift_open; adb shell pidof "$PKG"; adb shell dumpsys activity activities | grep -E 'mResumedActivity|topResumedActivity'
