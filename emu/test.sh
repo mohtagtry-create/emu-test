@@ -1,1 +1,1 @@
-adb shell monkey -p com.riftapps.animerift 1; sleep 12; snap a; ui a; adb shell "ps -A | grep -i rift"; echo "---LOGCAT---"; adb logcat -d | grep -iE "FATAL|AndroidRuntime|NoClassDefFound|animerift|MainDispatcher" | tail -40
+adb shell monkey -p com.riftapps.animerift 1; sleep 15; snap a; ui a; echo "---PROC---"; adb shell "ps -A | grep -i rift"; echo "---LOGCAT---"; adb logcat -d | grep -iE "FATAL|AndroidRuntime|NoClassDefFound|animerift|MainDispatcher" | tail -50
