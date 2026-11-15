@@ -1,1 +1,1 @@
-ACT=com.riftapps.animerift/.MainActivity; adb shell am start -n $ACT; sleep 18; echo "=== FATAL HEAD ==="; adb logcat -d 2>/dev/null | grep -A6 "FATAL EXCEPTION" | head -25; echo "=== CAUSED BY ==="; adb logcat -d 2>/dev/null | grep -E "Caused by:" | tail -8
+ACT=com.riftapps.animerift/.MainActivity; adb shell am start -n $ACT; sleep 40; echo "=== PROC ==="; adb shell ps -A 2>/dev/null | grep -i rift || echo "NO PROCESS"; echo "=== FATAL ==="; adb logcat -d 2>/dev/null | grep -A8 "FATAL EXCEPTION" | head -20; snap a; ui a
