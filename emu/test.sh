@@ -1,1 +1,1 @@
-adb shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; sleep 20; snap anime_rift_open; ui anime_rift_open; adb shell pidof "$PKG"; adb shell dumpsys activity activities | grep -E 'mResumedActivity|topResumedActivity'
+adb shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1; sleep 25; snap anime_rift_open; ui anime_rift_open; adb shell pidof "$PKG"; adb shell dumpsys activity activities | grep -E 'mResumedActivity|topResumedActivity'; adb logcat -d -t 500 | grep -E 'FATAL EXCEPTION|UnsatisfiedLinkError|MainDispatcher|animerift|flutter'
