@@ -1,1 +1,1 @@
-adb logcat -c; adb shell am start -n $PKG/.MainActivity; sleep 10; snap launch; adb logcat -d -b crash; adb logcat -d | grep -E 'FATAL|AndroidRuntime.*Exception|streamnova' | tail -30
+adb logcat -c; adb shell am start -n $PKG/.MainActivity; sleep 12; snap home; ui home; adb logcat -d -b crash | tail -15
