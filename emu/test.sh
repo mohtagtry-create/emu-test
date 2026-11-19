@@ -1,1 +1,1 @@
-adb shell svc wifi disable; adb shell svc data disable; sleep 3; adb logcat -c; adb shell am start -n $PKG/.MainActivity; sleep 12; snap offline-home; adb shell input swipe 160 500 160 200; sleep 2; snap offline-scroll; adb shell input tap 100 500; sleep 4; snap offline-tap; adb logcat -d -b crash | tail -8
+adb shell svc wifi disable; adb shell svc data disable; sleep 3; adb logcat -c; adb shell am start -n $PKG/.MainActivity; sleep 15; ui offline; adb shell input swipe 160 500 160 200; sleep 2; ui scrolled; adb logcat -d -b crash | grep -c streamnova
