@@ -1,1 +1,1 @@
-adb shell monkey -p $PKG 1; sleep 12; snap home; ui home; adb shell svc wifi disable; adb shell svc data disable; sleep 2; adb shell am force-stop $PKG; adb shell monkey -p $PKG 1; sleep 10; snap offline; adb logcat -d | grep -iE 'chromium|AndroidRuntime|FATAL' | tail -25
+adb logcat -c; adb shell am start -n $PKG/.MainActivity; sleep 10; snap launch; adb logcat -d -b crash; adb logcat -d | grep -E 'FATAL|AndroidRuntime.*Exception|streamnova' | tail -30
