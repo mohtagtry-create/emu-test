@@ -1,1 +1,1 @@
-adb shell am start -n $PKG/.MainActivity; sleep 25; snap b0; adb shell input swipe 160 480 160 250 600; sleep 2; snap b1; adb shell input tap 275 484; sleep 5; snap b2
+adb shell am start -n $PKG/.MainActivity; sleep 30; snap c0; adb shell input swipe 160 460 160 240 700; sleep 3; snap c1; adb shell input tap 275 480; sleep 6; snap c2; adb shell input swipe 160 460 160 260 700; sleep 4; snap c3
