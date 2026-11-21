@@ -1,1 +1,1 @@
-adb shell monkey -p $PKG 1; sleep 15; snap main; adb shell input swipe 160 500 160 150 400; sleep 1; snap scrolled; adb shell input tap 250 60; sleep 2; snap tap1; adb shell input tap 290 60; sleep 2; snap tap2
+adb shell monkey -p $PKG 1; sleep 15; adb shell input tap 160 610; sleep 4; snap anime; adb shell input tap 235 60; sleep 2; snap search; adb shell input text 'naruto'; sleep 1; adb shell input keyevent 66; sleep 8; snap results
