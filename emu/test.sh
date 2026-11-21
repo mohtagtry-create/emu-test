@@ -1,1 +1,1 @@
-adb shell monkey -p $PKG 1; sleep 18; snap home; ui home; adb logcat -d -s chromium:* | grep -iE 'console|error' | tail -10
+adb shell monkey -p $PKG 1; sleep 15; ui home; snap home; adb shell input tap 105 60; for i in 1 2 3 4 5; do sleep 0.3; adb shell input tap 105 60; done; sleep 2; snap taps; ui taps
