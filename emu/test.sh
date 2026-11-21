@@ -1,1 +1,1 @@
-adb shell am start -n $PKG/.MainActivity; sleep 35; snap t1; adb shell input swipe 160 460 160 260 700; sleep 6; snap t2; adb shell input swipe 160 460 160 260 700; sleep 4; snap t3
+adb shell am start -n $PKG/.MainActivity; sleep 35; snap dbg1; adb logcat -d | grep -E 'SNDBG|Console' | tail -40
