@@ -1,1 +1,1 @@
-adb shell monkey -p $PKG 1; sleep 15; snap home; ui home; adb shell input tap 540 1900; sleep 3; snap b; ui b; adb logcat -d | grep -iE 'streamnova|chromium.*error|NativeHttp' | tail -20
+adb shell monkey -p $PKG 1; sleep 18; snap home; ui home; adb logcat -d -s chromium:* | grep -iE 'console|error' | tail -10
